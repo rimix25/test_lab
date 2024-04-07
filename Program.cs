@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -44,20 +45,22 @@ public class Program
             }
             else if (sign == '/')
             {
-                if (two == 0)
+                
+                if(two == 0) 
                 {
-                    Console.WriteLine("Ошибка. Делитель не может быть равным нулю.");
-                    Console.WriteLine("Для выхода нажмите любую клавишу...");
-                    Console.ReadKey();
+                throw new DivideByZeroException("На ноль делить нельзя");
                 }
-                else
-                {
-                    result = one / two;
+            try { 
+                result = one / two;
                     Console.WriteLine("Частное ваших чисел равна " + result);
                     Console.WriteLine("Для выхода нажмите любую клавишу...");
                     Console.ReadKey();
                 }
-
+            catch(DivideByZeroException ex) { 
+                Console.WriteLine(ex.Message);
+            }
+                
+                
 
             }
             else
