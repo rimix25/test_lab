@@ -16,11 +16,11 @@ public class Program
             char sign;
             Console.WriteLine("Добро пожаловать в калькулятор. Вам нелбходимо ввести первое число, затем знак действия(+,-,*,/), которое хотите совершить и второе число.");
             Console.Write("Введите первое число: ");
-            one = Convert.ToSingle(Console.ReadLine());
+            one = CheckNum();
             Console.Write("Введите знак действия : ");
             sign = Convert.ToChar(Console.ReadLine());
             Console.Write("Введите Второе число: ");
-            two = Convert.ToSingle(Console.ReadLine());
+            two = CheckNum();
         if (sign == '+')
             {
                 result = one + two;
@@ -71,6 +71,22 @@ public class Program
 
         
 
+        
+
     }
+
+    public static float CheckNum()
+    {
+        while (true)
+        {
+            string text = Console.ReadLine();
+            if(float.TryParse(text, out float result))
+            {
+                return result;
+                break;
+            }
+            Console.WriteLine("Не удалось распознать число, попробуйте еще раз.");
+        }
+    }  
         
 }
