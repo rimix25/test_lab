@@ -12,11 +12,15 @@ public class Program
 {
     private static void Main()
     {
-      
+        string quetion = "n";
+        Console.WriteLine("Проект разработал Романов ИМ");
+        Console.WriteLine("Добро пожаловать в калькулятор. Вам необходимо ввести первое число, затем знак действия(+,-,*,/), которое хотите совершить и второе число.");
+
+            while(quetion == "n")
+        {
             float one, two, result;
             char sign;
-            Console.WriteLine("Проект разработал Романов ИМ");
-            Console.WriteLine("Добро пожаловать в калькулятор. Вам нелбходимо ввести первое число, затем знак действия(+,-,*,/), которое хотите совершить и второе число.");
+            
             Console.Write("Введите первое число: ");
             one = CheckNum();
             Console.Write("Введите знак действия : ");
@@ -72,7 +76,13 @@ public class Program
 
 
             }
+            
+            Console.WriteLine("Завершить работу программу (y / n)?");
+            quetion = Console.ReadLine();
 
+        }
+      
+            
         
 
         
