@@ -19,7 +19,7 @@ public class Program
             Console.Write("Введите первое число: ");
             one = CheckNum();
             Console.Write("Введите знак действия : ");
-            sign = Convert.ToChar(Console.ReadLine());
+            sign = CheckSym();
             Console.Write("Введите Второе число: ");
             two = CheckNum();
         if (sign == '+')
@@ -91,5 +91,21 @@ public class Program
             Console.WriteLine("Не удалось распознать число, попробуйте еще раз.");
         }
     }  
+     
+    public static char CheckSym()
+    {
+        while (true)
+        {
+            //char allsym[] = {("+", "-", "*", "/"};
+            string [] allsym = {"+", "-", "*", "/"};
+            string sym = Convert.ToString(Console.ReadLine());
+            if(allsym.Contains(sym)){
+                return Convert.ToChar(sym);
+                break;
+            }
+            Console.WriteLine("Не верный знак");
+        }
         
+        
+    }
 }
