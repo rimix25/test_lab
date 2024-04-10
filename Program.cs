@@ -15,6 +15,7 @@ public class Program
       
             float one, two, result;
             char sign;
+            Console.WriteLine("Проект разработал Романов ИМ");
             Console.WriteLine("Добро пожаловать в калькулятор. Вам нелбходимо ввести первое число, затем знак действия(+,-,*,/), которое хотите совершить и второе число.");
             Console.Write("Введите первое число: ");
             one = CheckNum();
@@ -97,10 +98,10 @@ public class Program
         while (true)
         {
             //char allsym[] = {("+", "-", "*", "/"};
-            char [] allsym = {'+', '-', '*', '/'};
-            char sym = Convert.ToChar(Console.ReadLine());
+            string [] allsym = {"+", "-", "*", "/"};
+            string sym = Convert.ToString(Console.ReadLine());
             if(allsym.Contains(sym)){
-                return sym;
+                return Convert.ToChar(sym);
                 break;
             }
             Console.WriteLine("Не верный знак");
