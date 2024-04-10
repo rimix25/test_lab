@@ -12,14 +12,18 @@ public class Program
 {
     private static void Main()
     {
-      
+        string quetion = "n";
+        Console.WriteLine("Проект разработал Романов ИМ");
+        Console.WriteLine("Добро пожаловать в калькулятор. Вам необходимо ввести первое число, затем знак действия(+,-,*,/), которое хотите совершить и второе число.");
+
+            while(quetion == "n")
+        {
             float one, two, result;
             char sign;
-            Console.WriteLine("Добро пожаловать в калькулятор. Вам нелбходимо ввести первое число, затем знак действия(+,-,*,/), которое хотите совершить и второе число.");
+            
             Console.Write("Введите первое число: ");
             one = CheckNum();
             Console.Write("Введите знак действия : ");
-            sign = Convert.ToChar(Console.ReadLine());
             Console.Write("Введите Второе число: ");
             two = CheckNum();
         if (sign == '+')
@@ -71,7 +75,13 @@ public class Program
 
 
             }
+            
+            Console.WriteLine("Завершить работу программу (y / n)?");
+            quetion = Console.ReadLine();
 
+        }
+      
+            
         
 
         
@@ -91,5 +101,21 @@ public class Program
             Console.WriteLine("Не удалось распознать число, попробуйте еще раз.");
         }
     }  
+     
+    public static char CheckSym()
+    {
+        while (true)
+        {
+            //char allsym[] = {("+", "-", "*", "/"};
+            string [] allsym = {"+", "-", "*", "/"};
+            string sym = Convert.ToString(Console.ReadLine());
+            if(allsym.Contains(sym)){
+                return Convert.ToChar(sym);
+                break;
+            }
+            Console.WriteLine("Не верный знак");
+        }
         
+        
+    }
 }
