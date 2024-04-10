@@ -97,10 +97,10 @@ public class Program
         while (true)
         {
             //char allsym[] = {("+", "-", "*", "/"};
-            string [] allsym = {"+", "-", "*", "/"};
-            string sym = Convert.ToString(Console.ReadLine());
+            char [] allsym = {'+', '-', '*', '/'};
+            char sym = Convert.ToChar(Console.ReadLine());
             if(allsym.Contains(sym)){
-                return Convert.ToChar(sym);
+                return sym;
                 break;
             }
             Console.WriteLine("Не верный знак");
