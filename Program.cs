@@ -24,6 +24,7 @@ public class Program
             Console.Write("Введите первое число: ");
             one = CheckNum();
             Console.Write("Введите знак действия : ");
+            sign = CheckSym();
             Console.Write("Введите Второе число: ");
             two = CheckNum();
         if (sign == '+')
